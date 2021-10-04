@@ -1,0 +1,28 @@
+<div >
+	<div class="usrRepo" *ngFor="let repo of repos">
+			<h1>{{repo.name}}</h1>
+			<h3>{{repo.description}}</h3>
+			<div *ngIf="repo.language!==null">
+				<button class="topics" >{{repo.language}}</button>
+			</div>
+	</div>
+
+	<div class="pni">
+		<div class="innerpni" id="bkw" (click)="prev()"><<</div>
+		<div class="innerpni" [ngStyle]="{'background-color':page_no === 1 ? 'skyblue' : 'white' }" id="1">1</div>
+		<div class="innerpni" [ngStyle]="{'background-color':page_no === 2 ? 'skyblue' : 'white' }" id="2">2</div>
+		<div class="innerpni" [ngStyle]="{'background-color':page_no === 3 ? 'skyblue' : 'white' }" id="3">3</div>
+		<div class="innerpni" [ngStyle]="{'background-color':page_no === 4 ? 'skyblue' : 'white' }" id="4">4</div>
+		<div class="innerpni" [ngStyle]="{'background-color':page_no === 5 ? 'skyblue' : 'white' }" id="5">5</div>
+		<div class="innerpni" [ngStyle]="{'background-color':page_no === 6 ? 'skyblue' : 'white' }" id="6">6</div>
+		<div class="innerpni" [ngStyle]="{'background-color':page_no === 7 ? 'skyblue' : 'white' }" id="7">7</div>
+		<div class="innerpni" [ngStyle]="{'background-color':page_no === 8 ? 'skyblue' : 'white' }" id="8">8</div>
+		<div class="innerpni" [ngStyle]="{'background-color':page_no === 9 ? 'skyblue' : 'white' }" id="9">9</div>
+		<div class="innerpni" [ngStyle]="{'background-color':page_no === 10 ? 'skyblue' : 'white' }" id="10">10</div>
+		<div class="innerpni" id="fwt" (click)="next()">>></div>
+		<br/>
+		<br/>
+		<button class="prev" (click)="prev()">Prev</button>
+		<button class="next" (click)="next()">Next</button>
+	</div>
+</div>

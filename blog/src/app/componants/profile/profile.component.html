@@ -1,0 +1,34 @@
+<div class="pureBody"> 
+	<input type="text" name="t1" #uname class="uinp" placeholder="Enter Username"> 
+
+	<button (click)="searchUser(uname.value)" class="usub">Search</button>
+
+
+      <div *ngIf="profData!==undefined">
+	      <div class="image">
+	      	<img src="{{profData.avatar_url}}">
+	      	<h6 class="http">{{profData.html_url}}</h6>
+	      </div>
+	      <div class="basic">
+	      	<h3>{{profData.name}}</h3>
+	      	<h5>{{profData.bio}}</h5>
+	      	<h5 *ngIf="profData.location!==null">{{profData.location}}</h5>
+	      	<h5 class="twitter">{{profData.twitter_username || 'https://twitter.com/'}}</h5>
+	      </div>
+      </div>
+      <div *ngIf="profData===undefined">
+	      <div class="image" style="margin-left:30px">
+	      	<ngx-skeleton-loader appearance="circle" [theme]="{ height: '120px',width: '120px'}"></ngx-skeleton-loader>
+	      	<h6><ngx-skeleton-loader [theme]="{ height: '20px',width: '100px'}"></ngx-skeleton-loader></h6>
+	      </div>
+	      <div class="basic" style="margin-top:-200px;">
+	      	<h3><ngx-skeleton-loader [theme]="{ height: '30px',width: '150px'}"></ngx-skeleton-loader></h3>
+	      	<h5><ngx-skeleton-loader [theme]="{ height: '30px',width: '150px'}"></ngx-skeleton-loader></h5>
+	      	
+	      </div>
+      </div>
+
+
+	<UserRepo [selected_guname]="myuname"> </UserRepo>
+
+</div>
